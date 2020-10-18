@@ -1,0 +1,82 @@
+<form [formGroup]="userForm">
+  <table border="1">
+    <tr>
+      <td>UserName:</td>
+      <td>
+        <input
+          type="text"
+          name="UserName"
+          formControlName="userName"
+          required
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td>
+        <input type="email" name="email" formControlName="email" required />
+      </td>
+    </tr>
+    <tr>
+      <td>password:</td>
+      <td>
+        <input
+          type="password"
+          name="password"
+          formControlName="password"
+          required
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>Description:</td>
+      <td>
+        <input
+          type="text"
+          name="description"
+          formControlName="description"
+          required
+        />
+      </td>
+    </tr>
+  </table>
+  <button (click)="save()">Save</button>
+  <button (click)="display()">Show All</button>
+  <div>
+    <table border="1">
+      <tr>
+        <td>id:</td>
+        <td><input type="number" name="id" formControlName="id" /></td>
+      </tr>
+    </table>
+    <button (click)="update()">update</button>
+    <button (click)="delete()">delete</button>
+  </div>
+</form>
+<div></div>
+<div>
+  <table border="1">
+    <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Description</th>
+      <th>Created By</th>
+      <th>Created Date</th>
+      <th>Updated By</th>
+      <th>Updated Date</th>
+    </tr>
+    <tr *ngFor="let i of userArray">
+      <td>{{ i.id }}</td>
+      <td>{{ i.name }}</td>
+      <td>{{ i.email }}</td>
+      <td>{{ i.password }}</td>
+      <td>{{ i.description }}</td>
+      <td>{{ i.createdBy }}</td>
+      <td>{{ i.createdDate }}</td>
+      <td>{{ i.updatedBy }}</td>
+      <td>{{ i.updatedDate }}</td>
+    </tr>
+  </table>
+</div>

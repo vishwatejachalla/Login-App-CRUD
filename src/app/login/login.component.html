@@ -1,0 +1,27 @@
+<form [formGroup]="loginForm">
+  <table border="1">
+    <tr>
+      <td>Email:</td>
+      <td>
+        <input
+          type="email"
+          name="email"
+          formControlName="email"
+          required
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>password:</td>
+      <td>
+        <input
+          type="password"
+          name="password"
+          formControlName="password"
+          required
+        />
+      </td>
+    </tr>
+  </table>
+  <button (click)="save()">Save</button>
+</form>
